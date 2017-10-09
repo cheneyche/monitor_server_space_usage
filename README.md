@@ -20,17 +20,14 @@
 sudo cp sendmail.py /usr/sbin/
 sudo chmod +x /usr/sbin/sendmail.py
 ```
-
-<br>
-<br>
-## 2.2.测试脚本是否可用
+## 2.2 测试脚本是否可用
 ### 2.2.1.先查看当前服务器使用情况，根据情况修改sendmail.py脚本
 ```Bash
 sudo df -h |grep " /$" |awk '{print $5}'
 ```
 通过root用户，执行上述命令，查看当前使用的数值为多少，如果是50%，那么先修改sendmail.py的阀值为50以下
 
-### 2.2.2.手动执行测试脚本，查看是否收到邮件,如果收到邮件说明正常，再把阀值修改为想要监控的数值
+### 2.2.2 手动执行测试脚本，查看是否收到邮件,如果收到邮件说明正常，再把阀值修改为想要监控的数值
 设置好阀值后，手动执行脚本，查看是否邮件收到
 ```Bash
 sudo /usr/bin/python /usr/sbin/sendmail.py
